@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b12">
+  <meta name="description" content="H2O-1B is a billion-frame multimodal dataset and automated digital twin method for human-to-humanoid visual-motor synthesis.">
+  <meta property="og:title" content="H2O — Human-to-Humanoid Visual-Motor Synthesis">
+  <meta property="og:description" content="A scalable digital twin method and billion-frame multimodal dataset for humanoid learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/pipeline.webp">
+  <title>H2O — Human-to-Humanoid Visual-Motor Synthesis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="H2O home">
+      <span class="brand-mark" aria-hidden="true">H<sub>2</sub>O</span>
+      <span class="brand-label">Digital Twin Method</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="#overview">Overview</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#demos">Demos</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-video-wall" aria-hidden="true">
+        <div class="hero-video-cell"><video src="assets/videos/human_bg1.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human_bg2.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human_bg3.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human_bg4.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human_bg5.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human_bg6.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human1.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human2.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human3.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human4.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human5.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/human6.mp4?v=20260929" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-07.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-08.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-09.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-10.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-11.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-12.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-13.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-14.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-15.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-16.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-17.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-18.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-19.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-20.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-21.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-22.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-23.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+        <div class="hero-video-cell"><video src="assets/videos/hero-24.mp4" muted loop playsinline autoplay preload="metadata" data-hero-video></video></div>
+      </div>
+      <div class="hero-video-overlay" aria-hidden="true"></div>
+
+      <div class="hero-title-card">
+        <h1>H<sub>2</sub>O: An Automated Digital Twin Method for<br>Human-to-Humanoid Visual-Motor Synthesis</h1>
+        <div class="hero-actions" aria-label="Project resources">
+          <a class="button button-glass" href="https://github.com/H20-Digital-Twin" target="_blank" rel="noopener noreferrer"><b aria-hidden="true">⌘</b> Code</a>
+          <a class="button button-glass" href="https://drive.google.com/drive/folders/1XWSuOfgn5w1D1ZYNVAZhrdFN6LdZkmF6?usp=sharing" target="_blank" rel="noopener noreferrer"><b aria-hidden="true">◫</b> Dataset</a>
+          <a class="button button-glass" href="#demos"><b aria-hidden="true">▶</b> Demos</a>
+        </div>
+      </div>
+
+      <nav class="hero-bottom-nav" aria-label="Cover navigation">
+        <a href="#overview">Overview</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#demos">Demos</a>
+      </nav>
+    </section>
+
+    <section class="section section-light" id="overview">
+      <div class="shell overview-grid">
+        <div class="section-heading reveal">
+          <p class="kicker">01 · Motivation</p>
+          <h2>Visual diversity and physical feasibility—together.</h2>
+        </div>
+        <div class="overview-copy reveal">
+          <p class="lead-copy">Progress in visual imitation learning for humanoid robots is bottlenecked by data: motion capture offers precise motion without rich visual context, while in-the-wild video offers appearance diversity without physically executable control signals.</p>
+          <p>H2O shifts the paradigm from passive collection to active synthesis. Its automated digital twin pipeline generates visually photorealistic, multimodal observations paired with kinematically compliant robot states, closing the gap between seeing human motion and executing it on heterogeneous humanoids.</p>
+        </div>
+      </div>
+
+      <div class="shell contribution-grid">
+        <article class="contribution reveal">
+          <span class="contribution-index">01</span>
+          <h3>Visual realism</h3>
+          <p>Implicit skinning reconstructs high-fidelity human surfaces across diverse body shapes, clothing, poses, and appearances.</p>
+        </article>
+        <article class="contribution reveal">
+          <span class="contribution-index">02</span>
+          <h3>Morphological transfer</h3>
+          <p>A canonical motion representation transfers human intent across robots with different proportions, chains, and degrees of freedom.</p>
+        </article>
+        <article class="contribution reveal">
+          <span class="contribution-index">03</span>
+          <h3>Physical compliance</h3>
+          <p>Constrained kinematic projection enforces joint, velocity, and hardware limits before control signals enter the dataset.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="pipeline">
+      <div class="shell">
+        <div class="section-heading heading-row reveal">
+          <div>
+            <p class="kicker">02 · Synthesis method</p>
+            <h2>One motion, two synchronized paths.</h2>
+          </div>
+          <p>The rendering and control branches are coupled by cycle consistency, keeping the visual surface spatially aligned with the underlying robot skeleton.</p>
+        </div>
+
+        <figure class="figure-card figure-card-dark reveal" data-lightbox>
+          <button class="figure-open" type="button" aria-label="Open pipeline figure">
+            <img src="assets/pipeline.webp" alt="Architecture of the H2O physics-aware motion synthesis pipeline" loading="lazy">
+            <span>Expand</span>
+          </button>
+          <figcaption>Physics-aware motion synthesis: canonicalization, implicit skinning, kinematic projection, motion alignment, and cycle consistency.</figcaption>
+        </figure>
+
+        <div class="process-line reveal" aria-label="Pipeline stages">
+          <div><span>01</span><strong>Canonicalize</strong><small>SE(3)-invariant motion</small></div>
+          <i aria-hidden="true"></i>
+          <div><span>02</span><strong>Reconstruct</strong><small>implicit human surface</small></div>
+          <i aria-hidden="true"></i>
+          <div><span>03</span><strong>Project</strong><small>robot constraints</small></div>
+          <i aria-hidden="true"></i>
+          <div><span>04</span><strong>Verify</strong><small>paired alignment</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="dataset">
+      <div class="shell">
+        <div class="section-heading heading-row reveal">
+          <div>
+            <p class="kicker">03 · H2O-1B dataset</p>
+            <h2>Paired perception and control at scale.</h2>
+          </div>
+          <p>Every sample is designed as learning-ready supervision rather than an isolated visual frame.</p>
+        </div>
+
+        <div class="modalities-layout">
+          <figure class="figure-card reveal" data-lightbox>
+            <button class="figure-open" type="button" aria-label="Open multimodal data figure">
+              <img src="assets/modalities.webp" alt="Examples of paired RGB, depth, segmentation mask, and robot pose modalities" loading="lazy">
+              <span>Expand</span>
+            </button>
+            <figcaption>Strictly aligned RGB, depth, foreground mask, and physically feasible robot pose.</figcaption>
+          </figure>
+          <div class="modality-list reveal">
+            <article><span class="modality-dot rgb"></span><div><h3>RGB</h3><p>Photorealistic appearance across subjects, clothing, lighting, and environments.</p></div></article>
+            <article><span class="modality-dot depth"></span><div><h3>Depth</h3><p>Dense geometry aligned pixel-for-pixel with the rendered observation.</p></div></article>
+            <article><span class="modality-dot mask"></span><div><h3>Mask</h3><p>Clean foreground supervision for segmentation and spatial grounding.</p></div></article>
+            <article><span class="modality-dot pose"></span><div><h3>Robot pose</h3><p>Control-ready states projected inside embodiment-specific constraints.</p></div></article>
+          </div>
+        </div>
+
+        <div class="comparison-wrap reveal">
+          <div class="table-intro">
+            <h3>Closing the modality gap</h3>
+            <p>H2O-1B combines visual, geometric, and robot-control signals at a scale unavailable in existing collections.</p>
+          </div>
+          <div class="table-scroll" tabindex="0" aria-label="Scrollable dataset comparison table">
+            <table>
+              <thead><tr><th>Dataset</th><th>Source</th><th>RGB</th><th>Depth</th><th>Robot joints</th><th>Physics</th><th>Frames</th></tr></thead>
+              <tbody>
+                <tr><td>AMASS</td><td>Mocap</td><td>—</td><td>—</td><td>—</td><td>—</td><td>5.40M</td></tr>
+                <tr><td>LocoMuJoCo</td><td>Mocap / Sim</td><td>—</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td><td>0.93M</td></tr>
+                <tr><td>Motion-X</td><td>In the wild</td><td class="yes">✓</td><td>—</td><td>—</td><td>N/A</td><td>15.6M</td></tr>
+                <tr><td>PHUMA Video</td><td>Aggregated</td><td class="yes">✓</td><td>—</td><td>—</td><td>N/A</td><td>7.88M</td></tr>
+                <tr class="ours"><td>H2O-1B <em>Ours</em></td><td>Synthetic</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>1B+</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-mist" id="diversity">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="kicker">04 · Multi-dimensional diversity</p>
+          <h2>Humans, embodiments, viewpoints, and worlds.</h2>
+          <p class="section-summary">The method systematically varies appearance and morphology without breaking motion correspondence.</p>
+        </div>
+
+        <div class="diversity-stack">
+          <article class="diversity-row reveal">
+            <div class="diversity-copy"><span>01</span><h3>Human diversity</h3><p>Varied anthropometrics, body shape, clothing style, and motion priors improve visual robustness.</p></div>
+            <img src="assets/pose-diversity.webp" alt="Human subjects with diverse appearances performing a shared motion" loading="lazy">
+          </article>
+          <article class="diversity-row reveal">
+            <div class="diversity-copy"><span>02</span><h3>Embodiment diversity</h3><p>The same intent is retargeted onto heterogeneous humanoids with distinct proportions and kinematic structures.</p></div>
+            <img src="assets/embodiment-diversity.webp" alt="A shared motion retargeted to several humanoid platforms" loading="lazy">
+          </article>
+          <article class="diversity-row reveal">
+            <div class="diversity-copy"><span>03</span><h3>Viewpoint diversity</h3><p>Monocular and multi-view observations cover a broad visual manifold for viewpoint-robust learning.</p></div>
+            <img src="assets/view-diversity.webp" alt="A humanoid motion observed from multiple camera viewpoints" loading="lazy">
+          </article>
+        </div>
+
+        <div class="domain-panel reveal">
+          <div class="domain-copy">
+            <p class="kicker">Domain randomization</p>
+            <h3>One intent, many worlds.</h3>
+            <p>Indoor, outdoor, transit, gallery, and natural scenes are varied alongside illumination and perspective to strengthen domain generalization.</p>
+          </div>
+          <div class="domain-strips" aria-label="Examples of domain-randomized human and robot renders">
+            <img src="assets/domain-1.webp" alt="Human and robot pair rendered across varied environments" loading="lazy">
+            <img src="assets/domain-2.webp" alt="Human and robot pair rendered across another set of environments" loading="lazy">
+            <img src="assets/domain-3.webp" alt="Human and robot pair rendered across a third set of environments" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section section-light" id="statistics">
+      <div class="shell">
+        <div class="section-heading heading-row reveal">
+          <div><p class="kicker">05 · Coverage</p><h2>A broad, long-tailed motion manifold.</h2></div>
+          <p>More than 60 semantic categories are distributed across subjects, robot platforms, camera settings, backgrounds, and lighting conditions.</p>
+        </div>
+        <div class="stats-grid">
+          <figure class="figure-card reveal" data-lightbox>
+            <button class="figure-open" type="button" aria-label="Open embodiment statistics"><img src="assets/statistics-embodiment.webp" alt="Statistics for robot retargeting, human subject diversity, and viewpoints" loading="lazy"><span>Expand</span></button>
+            <figcaption>Embodiment, human subject, and viewpoint coverage.</figcaption>
+          </figure>
+          <figure class="figure-card reveal" data-lightbox>
+            <button class="figure-open" type="button" aria-label="Open environment statistics"><img src="assets/statistics-environment.webp" alt="Statistics for data modality, backgrounds, and lighting conditions" loading="lazy"><span>Expand</span></button>
+            <figcaption>Modality, background, and illumination coverage.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="section section-dark" id="evaluation">
+      <div class="shell">
+        <div class="section-heading heading-row reveal">
+          <div><p class="kicker">05 · Evaluation</p><h2>Geometry that stays grounded.</h2></div>
+          <p>H2O improves whole-body and upper-body reconstruction while maintaining surface quality and volumetric overlap.</p>
+        </div>
+
+        <div class="result-metrics reveal">
+          <div><span>Whole-body CD ↓</span><strong>4.83<small> mm</small></strong><em>best</em></div>
+          <div><span>Upper-body CD ↓</span><strong>4.24<small> mm</small></strong><em>best</em></div>
+          <div><span>Whole-body IoU ↑</span><strong>0.971</strong><em>best</em></div>
+          <div><span>Upper-body NC ↑</span><strong>0.792</strong><em>best</em></div>
+        </div>
+
+        <div class="evaluation-grid">
+          <figure class="figure-card figure-card-dark reveal" data-lightbox>
+            <button class="figure-open" type="button" aria-label="Open tracking error chart"><img src="assets/tracking-error.webp" alt="Position tracking errors for five body parts compared with existing methods" loading="lazy"><span>Expand</span></button>
+            <figcaption>Position tracking error across key body parts; lower is better.</figcaption>
+          </figure>
+          <figure class="figure-card figure-card-dark reveal" data-lightbox>
+            <button class="figure-open" type="button" aria-label="Open motion manifold chart"><img src="assets/motion-manifold.webp" alt="t-SNE visualization comparing H2O-1B motion coverage with existing datasets" loading="lazy"><span>Expand</span></button>
+            <figcaption>H2O-1B expands motion manifold coverage beyond existing benchmarks.</figcaption>
+          </figure>
+        </div>
+
+        <div class="real-world reveal">
+          <div class="real-world-copy">
+            <p class="kicker">Physical validation</p>
+            <h3>From synthesized motion to a real humanoid.</h3>
+            <p>Real-world evaluation demonstrates that the projected trajectories remain transferable to hardware across expressive whole-body motions.</p>
+          </div>
+          <figure data-lightbox>
+            <button class="figure-open" type="button" aria-label="Open real robot result"><img src="assets/real-world.webp" alt="Physical humanoid executing a diverse set of synthesized motions" loading="lazy"><span>Expand</span></button>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="demos">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="kicker">06 · Video demonstrations</p>
+          <h2>Demos</h2>
+        </div>
+
+        <div class="demo-grid">
+          <article class="demo-card reveal">
+            <video src="assets/videos/demo1.mp4?v=20260929" controls playsinline preload="metadata"></video>
+            <h3>Demo 1</h3>
+          </article>
+          <article class="demo-card reveal">
+            <video src="assets/videos/demo2.mp4?v=20260929" controls playsinline preload="metadata"></video>
+            <h3>Demo 2</h3>
+          </article>
+          <article class="demo-card reveal">
+            <video src="assets/videos/demo3.mp4?v=20260929" controls playsinline preload="metadata"></video>
+            <h3>Demo 3</h3>
+          </article>
+          <article class="demo-card reveal">
+            <video src="assets/videos/demo4.mp4?v=20260929" controls playsinline preload="metadata"></video>
+            <h3>Demo 4</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><a class="brand footer-brand" href="#top"><span class="brand-mark">H<sub>2</sub>O</span></a><p>Automated digital twins for scalable humanoid learning.</p></div>
+      <a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" data-lightbox-dialog>
+    <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <img src="" alt="">
+    <p></p>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
